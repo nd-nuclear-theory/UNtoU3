@@ -1,12 +1,12 @@
 Contents of the UNtoU3 package:
 
-UNtoU3.h - main header file to be included into C++11 enabled source code.
+UNtoU3.h - main header file to be included into C++17 enabled source code.
 
 test_141.cpp - test source file for U(6) irrep [2,1,1,1,1,0].
 
 test_6114.cpp - test source file for U(21) irrep [2,2,2,2,2,2,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0].
 
-test_input.cpp - benchmark source file that takes eta, n2, n1, and n0 as user inputs and optionaly (with BOOST) verify level dimensionalities or generated U3 irreps.
+test_input.cpp - benchmark source file that takes eta, n4, n3, n2, n1, and n0 as user inputs and optionaly (with BOOST) verify level dimensionalities or generated U3 irreps.
 
 Makefile - build configuration for automake tool. 
 
