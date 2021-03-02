@@ -1,5 +1,5 @@
 CC = g++
-CXXFLAGS = -std=c++11
+CXXFLAGS += -std=c++17
 CXXDEBUG_FLAGS = $(CXXFLAGS) -O0 -g
 CXXRELEASE_FLAGS = $(CXXFLAGS) -O2 -DNDEBUG
 OMPFLAGS=-fopenmp
@@ -11,11 +11,11 @@ else
 BOOST_FLAGS =
 endif
 
-binaries = test_141 test_6114 test_input 
+binaries = test_141 test_6114 test_input
 
 .PHONY: all
 all: $(binaries)
-		
+
 test_141: %: %.cpp
 	$(CC) $(CXXDEBUG_FLAGS) -o $@ $<
 
