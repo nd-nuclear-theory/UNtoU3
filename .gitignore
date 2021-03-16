@@ -1,3 +1,6 @@
+*.a
+*.o
+
 test_141
 test_6114
 test_input
