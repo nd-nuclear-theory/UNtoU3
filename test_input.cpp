@@ -94,9 +94,14 @@ int main() {
       // get U(3) weight lables
       const auto & weight = pair.first;
       // get its level dimensionality if its nonzero and the U(3) weight is a U(3) irrep
-      if (auto D_l = gen.getLevelDimensionality(weight))
+      if (auto D_l = gen.getLevelDimensionality(weight)) {
          // add contribution of this U(3) irrep to the sum
          sum += D_l * dim(weight);
+         std::cout << " [" << weight[0] << "," << weight[1] << "," << weight[2] << "]"
+                   << "->(" << weight[0] - weight[1] << "," << weight[1]-weight[2] << ")"
+                   << " : " << pair.second
+                   << std::endl;
+     }
    }
    std::cout << "U(3) irreps total dim = " << sum << std::endl;
 }
