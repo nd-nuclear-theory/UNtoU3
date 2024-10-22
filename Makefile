@@ -1,5 +1,5 @@
 CC = g++
-CXXFLAGS += -std=c++17
+CXXFLAGS += -std=c++17 -DUNTOU3_GLOBAL_NAMESPACE
 CXXDEBUG_FLAGS = $(CXXFLAGS) -O0 -g
 CXXRELEASE_FLAGS = $(CXXFLAGS) -O2 -DNDEBUG
 OMPFLAGS=-fopenmp
@@ -23,6 +23,9 @@ test_6114: %: %.cpp
 	$(CC) $(CXXRELEASE_FLAGS) $(OMPFLAGS) -o $@ $<
 
 test_input: %: %.cpp
+	$(CC) $(CXXRELEASE_FLAGS) $(OMPFLAGS) $(BOOST_FLAGS) -o $@ $<
+
+test_input_SO3: %: %.cpp
 	$(CC) $(CXXRELEASE_FLAGS) $(OMPFLAGS) $(BOOST_FLAGS) -o $@ $<
 
 .PHONY: clean
